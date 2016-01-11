@@ -12,6 +12,14 @@
 \setotherlanguage{english}
 \setmathfont{xits-math.otf}
 \setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{xits-math.otf}
+
+\makeatletter
+\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+\patchcmd{\arrowfill@}{-7mu}{-14mu}{}{}
+\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+\patchcmd{\arrowfill@}{-2mu}{-4mu}{}{}
+\makeatother
+
 \else
 \fi
 
