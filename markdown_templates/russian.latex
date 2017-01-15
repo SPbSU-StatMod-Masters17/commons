@@ -8,25 +8,31 @@ $if(linestretch)$
 \usepackage{setspace}
 \setstretch{$linestretch$}
 $endif$
-\usepackage{amssymb,amsmath}
+
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[T2A]{fontenc}
-  \usepackage[utf8]{inputenc}
+   \usepackage[intlimits]{amsmath}
+   \usepackage{amsfonts, amssymb,amscd}
+   \usepackage[utf8x]{inputenc}
+   \usepackage[english, russian]{babel}
+   \usepackage[OT1]{fontenc}
+   \usepackage{graphicx}}
 $if(euro)$
   \usepackage{eurosym}
 $endif$
 \else % if luatex or xelatex
   \ifxetex
     % XeLaTeX
-    \usepackage{mathtools}
-    \usepackage[bold-style=TeX]{unicode-math}
-    \usepackage{xltxtra}
+   \usepackage{mathtools}
+   \usepackage[bold-style=TeX]{unicode-math}
+   \usepackage{xltxtra}
     %%% Кодировки и шрифты %%%
     \usepackage{polyglossia}                          % Поддержка многоязычности
     \usepackage{fontspec}
     \usepackage{xunicode}
+    \setmathfont{xits-math.otf}
+    \setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{xits-math.otf}
   \else
     \usepackage{fontspec}
   \fi
