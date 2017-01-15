@@ -16,8 +16,8 @@ $endif$
    \usepackage{amsfonts, amssymb,amscd}
    \usepackage[utf8x]{inputenc}
    \usepackage[english, russian]{babel}
-   \usepackage[OT1]{fontenc}
-   \usepackage{graphicx}}
+   \usepackage[OT2]{fontenc}
+   \usepackage{graphicx}
 $if(euro)$
   \usepackage{eurosym}
 $endif$
@@ -61,14 +61,7 @@ $endif$
 $if(geometry)$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
-$if(lang)$
-\ifxetex
-  \usepackage{polyglossia}
-  \setmainlanguage{$mainlang$}
-\else
-  \usepackage[shorthands=off,$lang$]{babel}
-\fi
-$endif$
+
 $if(natbib)$
 \usepackage{natbib}
 \bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
